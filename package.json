@@ -1,0 +1,47 @@
+{
+  "name": "read-it",
+  "version": "1.0.0",
+  "description": "Master Electron Project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron .",
+    "reset": "git reset --hard",
+    "win-cert": "electron-builder create-self-signed-cert -p SourabhMunat"
+  },
+  "repository": "https://github.com/Sourabh-Munat/electron-learning",
+  "homepage": "https://github.com/Sourabh-Munat/electron-learning",
+  "keywords": [
+    "Electron",
+    "Master Electron",
+    "demo"
+  ],
+  "author": "SourabhMunat",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^11.0.0",
+    "electron-builder": "^22.9.1",
+    "nodemon": "^2.0.0"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.sourabh-munat.read-it",
+    "copyright": "sourabhMunat",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis",
+      "certificateFile": "private/SourabhMunat.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": false,
+      "publisherName": "SourabhMunat"
+    },
+    "linux": {
+      "category": "Utility"
+    }
+  }
+}
